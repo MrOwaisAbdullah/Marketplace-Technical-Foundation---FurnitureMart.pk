@@ -27,7 +27,7 @@ Technology Stack
 
  - Backend: Next.js API routes and Sanity CMS.
 
- - Database: Sanity CMS for managing products, orders, reviews, and user data.
+ - Database: Sanity CMS for managing products, cart, orders, reviews, and user data.
 
 
 Third-Party APIs:

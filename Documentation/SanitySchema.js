@@ -59,6 +59,54 @@ const sellerSchema = {
   ],
 };
 
+
+// Store cart data in Sanity
+const cart = {
+  name: "cart",
+  type: "document",
+  title: "Cart",
+  fields: [
+    {
+      name: "user",
+      type: "reference",
+      to: [{ type: "user" }],
+      title: "User",
+      description: "The user who owns this cart",
+    },
+    {
+      name: "items",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "product",
+              type: "reference",
+              to: [{ type: "product" }],
+              title: "Product",
+            },
+            {
+              name: "quantity",
+              type: "number",
+              title: "Quantity",
+            },
+          ],
+        },
+      ],
+      title: "Cart Items",
+      description: "List of products in the cart",
+    },
+    {
+      name: "totalPrice",
+      type: "number",
+      title: "Total Price",
+    },
+  ],
+};
+
+
+
 // Store details about customer orders.
 const orders = {
   name: "order",
@@ -130,3 +178,5 @@ const reviews = {
     },
   ],
 };
+
+
