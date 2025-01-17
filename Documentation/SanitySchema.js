@@ -114,10 +114,10 @@ const orders = {
   title: "Order",
   fields: [
     {
-      name: "customer",
+      name: "user",
       type: "reference",
       to: [{ type: "user" }],
-      title: "Customer",
+      title: "user",
       description: "The customer who placed this order.",
     },
     {
@@ -161,10 +161,10 @@ const reviews = {
       description: "The product being reviewed.",
     },
     {
-      name: "customer",
+      name: "user",
       type: "reference",
       to: [{ type: "user" }],
-      title: "Customer",
+      title: "user",
       description: "The customer who wrote this review.",
     },
     { name: "rating", type: "number", title: "Rating" },
@@ -179,4 +179,23 @@ const reviews = {
   ],
 };
 
+
+// Store details about the user.
+const user = {
+  name: "user",
+  type: "document",
+  title: "User",
+  fields: [
+    { name: "name", type: "string", title: "Full Name" },
+    { name: "email", type: "string", title: "Email" },
+    {
+      name: "password",
+      type: "string",
+      title: "Password",
+      description: "Store hashed passwords only!",
+    },
+    { name: "phone", type: "string", title: "Phone Number" },
+    { name: "address", type: "text", title: "Address" },
+  ],
+};
 
